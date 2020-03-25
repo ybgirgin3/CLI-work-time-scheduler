@@ -1,3 +1,7 @@
+/*
+Author: Yusuf Berkay Girgin
+Date: 25 March 2020 04:07
+*/
 #include<iostream>
 // for defining list this must be called
 #include<list>
