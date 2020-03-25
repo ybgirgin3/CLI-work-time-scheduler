@@ -2,11 +2,15 @@
 Author: Yusuf Berkay Girgin
 Date: 25 March 2020 04:07
 */
+
 #include<iostream>
 // for defining list this must be called
 #include<list>
 // for using sleep
 #include<unistd.h>
+
+// for colored terminal outputs
+#include "colored_output.h"
 
 int main() {
 
@@ -50,7 +54,7 @@ int main() {
 
 		// if user defined_time equals to time_controller at the moment
         if (user_defined_time == time_controller) {
-            std::cout << "Your break time has begun" << std::endl;
+            std::cout << MAGENTA << "Your break time has begun" << std::endl;
             std::cout << "break time will be " << user_defined_break_time << "seconds" << std::endl;
 
 			// give information to user 
@@ -73,7 +77,7 @@ int main() {
 			// work_time_collector++;
 
             // break time has done
-            std::cout << "Your break time has done" << std::endl;
+            std::cout << YELLOW << "Your break time has done" << std::endl;
             std::cout << "your schedule will begin in 2.5 seconds" << std::endl;
 
             // wait for 2.5 second to let user prepare itself
@@ -83,11 +87,11 @@ int main() {
 			// resetting time_controller
 			time_controller = 0;
             user_defined_time = user_defined_time + time_controller;
-			std::cout << "new work time: " << user_defined_time << std::endl;
+			// std::cout << "new work time: " << user_defined_time << std::endl;
 
             // print size of the work_time_collected list
             // with this give information about the finished work times 
-            std::cout << "new work time started.. collected worktimes: " << work_time_collector.size() << std::endl;
+            std::cout << RESET << "new work time started.. collected worktimes: " << work_time_collector.size() << std::endl;
             continue;
 
         }
